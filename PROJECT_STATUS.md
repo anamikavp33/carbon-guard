@@ -30,7 +30,12 @@ against the PDF are listed in `PROJECT_OVERVIEW.md` (section "Assumptions to con
 | AI evaluation script | `ai_model/evaluation/evaluate.py` with a tiny fake model | **Runs correctly**; the numbers mean nothing (fake model) |
 | Android manifest setup script | `setup_android.ps1 -ManifestOnly` on a sample manifest | Adds permissions once; a second run changes nothing; written without BOM |
 | **Flutter app** | `flutter analyze`, `flutter test` | **NOT RUN: Flutter is not installed on this PC.** The code has never been compiled |
-| MongoDB Atlas | `scripts/check_db.py` | **NOT RUN: no `backend/.env` with a connection string exists** |
+| MongoDB Atlas connection | `scripts/check_db.py` | **Passed** (2026-10-25, after removing `<` `>` left around the password in `MONGO_URI`) |
+| Atlas setup | `database/scripts/init_db.py` | **Passed**: 10 collections and all indexes created, 3 credit rules, settings, admin account |
+| Atlas demo data | `database/seed/seed_demo_data.py` | **Passed**: 3 demo users, 8 submissions (synthetic images), mixed statuses |
+| Atlas integrity | `database/scripts/check_integrity.py` | **Passed**: 4 users, 8 submissions, no problems found |
+| Backend server + smoke test on Atlas | `uvicorn`, `smoke_test.py` | **All 10 checks passed** on Atlas (2026-10-25); real address lookup worked. Left one `smoke-…@example.com` user in Atlas |
+| Dashboard against the Atlas backend | `npm run dev` | Serves, CORS allowed, admin login + `/admin/stats` work over the API. **Browser login not yet confirmed by a person** |
 | Satellite (live Copernicus) | — | **NOT RUN: no account/credentials.** Tested only with a simulated service |
 | Reverse geocoding (live OpenStreetMap) | smoke test with geocoding on | Worked on 2026-10-25 (returned real Kerala addresses) |
 | Dashboard visual click-through in a browser | — | **NOT DONE** (no browser automation available). API behaviour behind every page is tested |
@@ -52,8 +57,10 @@ against the PDF are listed in `PROJECT_OVERVIEW.md` (section "Assumptions to con
 
 1. **Compile and test the Flutter app** (Amritha): install Flutter, run `setup_android.ps1`, `flutter analyze`,
    `flutter test`, then the checklist in `mobile_app/README.md`. Expect to fix small compile issues.
-2. **Connect MongoDB Atlas** (Antony + Anamika): create `backend/.env`, run `scripts/check_db.py`, `init_db.py`,
-   `seed_demo_data.py`, `check_integrity.py`, then `smoke_test.py` against the Atlas-backed server.
+2. **Finish the Atlas check** (Antony + Anamika): Atlas is connected, seeded and passes the smoke test (see table).
+   Still to do: log in to the dashboard in a browser with the admin account in `backend/.env`, and remove smoke-test
+   users when no longer wanted (`cleanup_demo_data.py --smoke`, then add `--yes`). Demo user password:
+   `DEMO_USER_PASSWORD` in `backend/.env`.
 3. **Click through the dashboard** in a browser, including a phone-width window (Ameegha).
 4. **Train and evaluate the AI model** (needs about 150+ labelled photos per class; `ai_model/README.md`).
    Until then every submission gets 0 AI points and goes to manual review.

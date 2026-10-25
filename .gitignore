@@ -35,3 +35,6 @@ Thumbs.db
 
 # Release archives (built from the source, see PROJECT_STATUS.md)
 *.zip
+
+# A copy of the release ZIP unpacked inside the project (it may hold a real .env)
+/carbon-guard/
