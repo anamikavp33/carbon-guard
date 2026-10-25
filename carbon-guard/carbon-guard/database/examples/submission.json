@@ -1,0 +1,53 @@
+{
+  "_id": {"$oid": "6ade2c026233689001c193a1"},
+  "user_id": {"$oid": "6ade2c016233689001c193a0"},
+  "user_email": "demo.asha@example.com",
+  "activity_type": "tree_plantation",
+  "image_filename": "b329949ac93f437793ce39f196066300.jpg",
+  "image_url": "/uploads/b329949ac93f437793ce39f196066300.jpg",
+  "image_hash": "fc118520b0473d14a65c68535cd66bb7a2746eab55a103fd0c3e234d412a6bd7",
+  "image_dhash": "8f0e1c3870e0c183",
+  "image_width": 640,
+  "image_height": 480,
+  "gps": {"lat": 9.522, "lng": 76.3, "accuracy_m": 8.0, "is_mocked": false},
+  "description": "Planted 4 mango saplings near the school",
+  "scale_value": 4.0,
+  "status": "verified",
+  "ai_verification": {
+    "status": "unavailable", "model": null, "predicted_class": null, "confidence": null,
+    "matched": null, "scores": {}, "warnings": ["No AI model file installed (see ai_model/README.md)."]
+  },
+  "location_verification": {
+    "gps_valid": true, "accuracy_m": 8.0, "accuracy_ok": true,
+    "address": "Thumpoly, Ambalappuzha, Alappuzha, Kerala, 688008, India",
+    "geocoding_status": "ok", "notes": []
+  },
+  "satellite_verification": {
+    "status": "not_configured", "source": null, "acquisition_date": null, "cloud_cover": null,
+    "image_url": null, "ndvi_mean": null, "supports_claim": null,
+    "notes": ["Satellite imagery is not configured on this server."]
+  },
+  "fraud_check": {
+    "is_duplicate_image": false, "is_duplicate_location": false, "suspicious_pattern": false,
+    "flags": [], "reasons": [], "related_submission_ids": []
+  },
+  "verification_score": 30.0,
+  "score_components": {"ai": 0.0, "gps": 15.0, "satellite": 0.0, "fraud": 15.0},
+  "decision_reasons": [
+    "AI evidence: 0.0 of 60 points (AI model not available, so no AI evidence).",
+    "GPS check: 15.0 of 15 points (valid coordinates with acceptable accuracy).",
+    "Satellite: 0.0 of 10 points (no satellite evidence (not_configured)).",
+    "Fraud checks: 15.0 of 15 points (no flags).",
+    "Total score 30.0 of 100 (recommended for approval at 70+ with no flags).",
+    "Result: manual review, because the evidence score is below the threshold."
+  ],
+  "processing_error": null,
+  "environmental_impact": {"co2_estimate": 10.0, "unit": "kg_co2_per_year"},
+  "green_credits_awarded": 12.0,
+  "review_round": 0,
+  "reviewed_by": "admin@carbonguard.com",
+  "review_notes": "Saplings visible; location plausible.",
+  "reviewed_at": {"$date": "2026-10-25T16:19:15.950Z"},
+  "created_at": {"$date": "2026-10-25T16:19:14.129Z"},
+  "updated_at": {"$date": "2026-10-25T16:19:15.950Z"}
+}

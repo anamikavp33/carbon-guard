@@ -1,0 +1,6 @@
+-r requirements.txt
+pytest==8.3.4
+httpx==0.28.1
+mongomock==4.3.0
+# Only used by the tests to build a tiny ONNX model and check that inference code runs.
+onnx==1.17.0

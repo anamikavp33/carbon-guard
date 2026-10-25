@@ -1,0 +1,13 @@
+{
+  "_id": {"$oid": "6ade2c016233689001c193a0"},
+  "name": "Asha Demo",
+  "email": "demo.asha@example.com",
+  "password_hash": "$2b$12$SYNTHETICEXAMPLEHASHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "role": "user",
+  "trust_score": 55.0,
+  "green_credits_total": 12.0,
+  "is_active": true,
+  "is_demo": true,
+  "created_at": {"$date": "2026-10-25T16:19:13.857Z"},
+  "updated_at": {"$date": "2026-10-25T16:19:15.965Z"}
+}

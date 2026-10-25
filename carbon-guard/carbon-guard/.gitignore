@@ -1,0 +1,37 @@
+# Secrets and local settings: never commit
+.env
+.env.local
+.env.*.local
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+
+# Uploaded photos and satellite images (development storage)
+backend/uploads/*
+!backend/uploads/.gitignore
+
+# AI: model files, datasets and evaluation output are large / licence-restricted
+ai_model/weights/*
+!ai_model/weights/README.md
+ai_model/evaluation/results.*
+dataset/
+
+# Database backups (contain user data)
+backup/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Release archives (built from the source, see PROJECT_STATUS.md)
+*.zip

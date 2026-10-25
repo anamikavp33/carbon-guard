@@ -1,0 +1,24 @@
+name: carbon_guard_app
+description: Carbon Guard mobile app - submit environmental activities for verification.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.2                     # REST calls to the FastAPI backend
+  provider: ^6.1.2                 # simple app-wide state (the login session)
+  flutter_secure_storage: ^9.2.2   # keeps the login token in Android's encrypted storage
+  image_picker: ^1.1.2             # camera and gallery
+  geolocator: ^13.0.2              # GPS position and permission handling
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

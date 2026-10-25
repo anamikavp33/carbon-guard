@@ -1,0 +1,50 @@
+{
+  "credit_transactions": {
+    "_id": {"$oid": "6ade2c036233689001c193a3"},
+    "user_id": {"$oid": "6ade2c016233689001c193a0"},
+    "submission_id": {"$oid": "6ade2c026233689001c193a1"},
+    "type": "award",
+    "amount": 12.0,
+    "rule_snapshot": {"base_credit_value": 3.0, "impact_multiplier": 1.0, "is_active": true},
+    "created_at": {"$date": "2026-10-25T16:19:15.950Z"}
+  },
+  "trust_score_events": {
+    "_id": {"$oid": "6ade2c036233689001c193a4"},
+    "event_key": "6ade2c026233689001c193a1:0:verified_submission",
+    "user_id": {"$oid": "6ade2c016233689001c193a0"},
+    "submission_id": {"$oid": "6ade2c026233689001c193a1"},
+    "event_type": "verified_submission",
+    "score_delta": 5.0,
+    "reason": "An admin approved a submission.",
+    "score_after": 55.0,
+    "created_at": {"$date": "2026-10-25T16:19:15.965Z"}
+  },
+  "green_credit_rules": {
+    "_id": {"$oid": "6ade2c006233689001c19390"},
+    "activity_type": "tree_plantation",
+    "base_credit_value": 3.0,
+    "impact_multiplier": 1.0,
+    "is_active": true,
+    "updated_by": null,
+    "updated_at": {"$date": "2026-10-25T16:19:12.536Z"}
+  },
+  "fraud_logs": {
+    "_id": {"$oid": "6ade2c096233689001c193b0"},
+    "submission_id": {"$oid": "6ade2c086233689001c193af"},
+    "user_id": {"$oid": "6ade2c076233689001c193ae"},
+    "flags": ["duplicate_image"],
+    "reasons": ["This exact image file was already submitted 1 time(s)."],
+    "related_submission_ids": [{"$oid": "6ade2c026233689001c193a1"}],
+    "created_at": {"$date": "2026-10-25T16:25:02.410Z"}
+  },
+  "audit_logs": {
+    "_id": {"$oid": "6ade2c036233689001c193a5"},
+    "admin_id": {"$oid": "6ade2c006233689001c1939f"},
+    "admin_email": "admin@carbonguard.com",
+    "action": "submission_approved",
+    "target_type": "submission",
+    "target_id": "6ade2c026233689001c193a1",
+    "details": {"green_credits_awarded": 12.0, "notes": "Saplings visible; location plausible."},
+    "created_at": {"$date": "2026-10-25T16:19:15.965Z"}
+  }
+}
